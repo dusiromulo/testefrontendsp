@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Text, { StatusBar, View, SafeAreaView } from 'react-native';
 
-import { ThemeContext, getTheme, Button, Icon } from 'react-native-material-ui';
+import { ThemeContext, getTheme, Icon } from 'react-native-material-ui';
+import Button from './src/components/button';
+import Toolbar from './src/components/toolbar';
 
 // you can set your style right here, it'll be propagated to application
 const uiTheme = {
   palette: {
-    // primaryColor: COLOR.green500,
+    primaryColor: '#FF8686',
   },
   toolbar: {
     container: {
@@ -20,11 +22,10 @@ class App extends Component {
     return (
         <ThemeContext.Provider value={getTheme(uiTheme)}>
             <SafeAreaView>
-            <StatusBar barStyle="dark-content"></StatusBar>
-                <Button primary text="Primary" />
-                <Button accent text="Accent" />
-                <Button raised primary text="Primary" />
-                <Button disabled text="Disabled" />
+                <StatusBar barStyle="dark-content"></StatusBar>
+                <Toolbar enableBack text="Alalaô" />
+                <Button text="Primary" onPress={() => {console.log('button press!!!s')}} />
+                <Button />
                 <Icon name="person"/>
             </SafeAreaView>
         </ThemeContext.Provider>
