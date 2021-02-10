@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Button as ButtonUI } from 'react-native-material-ui';
+import React from 'react';
+import { Button as ButtonUI } from 'react-native-paper';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -18,12 +18,12 @@ const defaultProps = {
     onPress: () => { },
 };
 
-class Button extends Component {
-    render() {
-        return (
-            <ButtonUI raised primary text={this.props.text} onPress={this.props.onPress}/>
-        );
-    }
+const Button = (props) => {
+    return (
+        <ButtonUI mode="contained" onPress={props.onPress} dark>
+            {props.text}
+        </ButtonUI>
+    );
 }
 
 Button.propTypes = propTypes;

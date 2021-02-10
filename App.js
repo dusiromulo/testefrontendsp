@@ -1,36 +1,84 @@
-import React, { Component } from 'react';
-import Text, { StatusBar, View, SafeAreaView } from 'react-native';
+import React, { useState } from 'react';
+import { StatusBar, SafeAreaView, View } from 'react-native';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import Button from './src/components/atoms/button';
+import Card from './src/components/atoms/card';
+import CreditCard from './src/components/molecules/credit-card';
+import Carousel from './src/components/molecules/carousel';
+import Toolbar from './src/components/organisms/toolbar';
+import Text from './src/components/atoms/text';
+import TextInput from './src/components/atoms/textinput';
 
-import { ThemeContext, getTheme, Icon } from 'react-native-material-ui';
-import Button from './src/components/button';
-import Toolbar from './src/components/toolbar';
 
-// you can set your style right here, it'll be propagated to application
-const uiTheme = {
-  palette: {
-    primaryColor: '#FF8686',
-  },
-  toolbar: {
-    container: {
-      height: 50,
+const theme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: '#FF8686',
+      text: '#707070',
     },
-  },
 };
 
-class App extends Component {
-  render() {
+const dataList = [
+    {
+        title:"Item 1",
+        text: "Text 1",
+    },
+    {
+        title:"Item 2",
+        text: "Text 2",
+    },
+    {
+        title:"Item 3",
+        text: "Text 3",
+    },
+    {
+        title:"Item 4",
+        text: "Text 4",
+    },
+    {
+        title:"Item 5",
+        text: "Text 5",
+    },
+];
+
+const App = (props) => {
+    const [text, setText] = useState('teste');
+
+    // const _renderItem = ({item, index}) => {
+    //     return (
+    //         <Card>
+    //             <Text text={item.title}></Text>
+    //             <Text>{item.text}</Text>
+    //         </Card>
+    //     )
+    // };
+
     return (
-        <ThemeContext.Provider value={getTheme(uiTheme)}>
+        <PaperProvider theme={theme}>
             <SafeAreaView>
                 <StatusBar barStyle="dark-content"></StatusBar>
                 <Toolbar enableBack text="Alalaô" />
-                <Button text="Primary" onPress={() => {console.log('button press!!!s')}} />
-                <Button />
-                <Icon name="person"/>
+                {/* <Button text="Primary" onPress={() => {console.log('button press!!!s')}} />
+                <Button /> */}
+                {/* <Text text="Teste" size={20} bold />
+                <TextInput
+                    value={text}
+                    label="Email"
+                    onChange={(value) => {
+                        console.log('on change input text!!!', value); 
+                        setText(value);
+                    }}
+                /> */}
+                {/* <Text text="Teste" color="blue" size={30} /> */}
+                {/* <Carousel 
+                    data={dataList}
+                    renderItem={_renderItem}
+                /> */}
+                <CreditCard />
             </SafeAreaView>
-        </ThemeContext.Provider>
+        </PaperProvider>
     );
-  }
 }
 
 export default App;
