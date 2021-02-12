@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button as ButtonUI } from 'react-native-paper';
+import Text from '../text';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -20,8 +21,8 @@ const defaultProps = {
 
 const Button = (props) => {
     return (
-        <ButtonUI mode="contained" onPress={props.onPress} dark>
-            {props.text}
+        <ButtonUI mode="contained" onPress={props.onPress} uppercase={false} compact>
+            <Text text={props.text} color='white' />
         </ButtonUI>
     );
 }

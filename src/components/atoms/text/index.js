@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text as TextUI, withTheme } from 'react-native-paper';
+import { Text as TextUI } from 'react-native-paper';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -12,13 +12,17 @@ const propTypes = {
      */
     color: PropTypes.string,
     /**
-     * Font weight (can be bold, medium or light)
+     * Font weight ('normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900')
      */
-    weight: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900',
+    weight: PropTypes.string,
     /**
      * Font size
      */
     size: PropTypes.number,
+    /**
+     * Fill all width avaiable
+     */
+    fullWidth: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -26,18 +30,20 @@ const defaultProps = {
     color: '#707070',
     weight: 'normal',
     size: 14,
+    fullWidth: false,
 };
 
 const Text = (props) => {
     return (
         <TextUI 
-        weight=''
-        style={{
-            color: props.color,
-            fontSize: props.size,
-            fontWeight: props.weight,
-            fontFamily: 'Helvetica Neue',
-        }}>
+            style={{
+                width: props.fullWidth? '100%': 'auto',
+                color: props.color,
+                fontSize: props.size,
+                fontWeight: props.weight,
+                fontFamily: 'Helvetica Neue',
+            }
+        }>
             {props.text}
         </TextUI>
     );
@@ -46,4 +52,4 @@ const Text = (props) => {
 Text.propTypes = propTypes;
 Text.defaultProps = defaultProps;
 
-export default withTheme(Text);
+export default Text;

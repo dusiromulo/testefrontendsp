@@ -3,6 +3,8 @@ import { Dimensions, View, StyleSheet } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import PropTypes from 'prop-types';
 import StyleContants from '../../../styles/constants';
+import Space from '../../atoms/space';
+import FlexLayout from '../../atoms/flex-layout';
 
 const propTypes = {
     /**
@@ -25,7 +27,7 @@ const CarouselPagination = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <View style={styles.parentCarouselPagination}>
+        <FlexLayout alignItems='center'>
             <Carousel
                 layout={'default'}
                 data={props.data}
@@ -43,9 +45,8 @@ const CarouselPagination = (props) => {
                 dotStyle={styles.paginationActiveDot}
                 inactiveDotScale={1}
                 inactiveDotOpacity={1}
-                inactiveDotStyle={styles.paginationInactiveDot}
-            />
-        </View>
+                inactiveDotStyle={styles.paginationInactiveDot} />
+        </FlexLayout>
     );
 }
 
@@ -53,9 +54,6 @@ const styles = StyleSheet.create({
     parentCarouselPagination: {
         flexDirection: 'column', 
         justifyContent: 'center',
-    },
-    paginationContainer: {
-        paddingVertical: StyleContants.smallMargin,
     },
     paginationActiveDot: {
         width: StyleContants.carouselDotSize,

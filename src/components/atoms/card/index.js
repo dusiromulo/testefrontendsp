@@ -5,14 +5,28 @@ import StyleContants from '../../../styles/constants';
 
 const propTypes = {
     /**
-     * Children elements to be rendered
+     * Margin measures
      */
-    children: PropTypes.node,
+    margin: PropTypes.object,
+    /**
+     * Padding measures
+     */
+    padding: PropTypes.object,
 };
 
 const defaultProps = {
-    text: 'Teste botão',
-    onPress: () => { },
+    margin: {
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+    },
+    padding: {
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+    },
 };
 
 const Card = (props) => {
@@ -20,12 +34,14 @@ const Card = (props) => {
         <CardUI 
             elevation={10}
             style={{
-                height: 250,
-                paddingVertical: 50,
-                paddingHorizontal: 25,
-                marginTop: 24,
-                marginBottom: 48,
-                marginHorizontal: 10,
+                marginTop: props.margin.top,
+                marginBottom: props.margin.bottom,
+                marginLeft: props.margin.left,
+                marginRight: props.margin.right,
+                paddingTop: props.padding.top,
+                paddingBottom: props.padding.bottom,
+                paddingLeft: props.padding.left,
+                paddingRight: props.padding.right,
                 borderRadius: 24,
             }}
         >
