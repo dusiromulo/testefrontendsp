@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import { ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Card from '../../atoms/card';
@@ -28,7 +28,7 @@ const CoursesCarousel = (props) => {
         )
     };
     return (
-        <>
+        <ScrollView>
             <FlexLayout margin={{top: 24, left: 24, right: 24}}>
                 <Text text='Conheça nossos cursos:' color='#FF8686' size={32}/>
             </FlexLayout>
@@ -36,7 +36,7 @@ const CoursesCarousel = (props) => {
                 data={props.coursesData}
                 renderItem={_renderItem}
             />
-        </>
+        </ScrollView>
     );
 }
 

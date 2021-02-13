@@ -62,7 +62,7 @@ const FlexLayout = (props) => {
             width: props.fullWidth? '100%': 'auto',
             flexDirection: props.direction, 
             alignItems: props.alignItems,
-            justifyContent: props.justifyContent
+            justifyContent: props.justifyContent,
         }}>
             { props.children }
         </View>

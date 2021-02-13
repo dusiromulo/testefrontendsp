@@ -43,10 +43,11 @@ const Card = (props) => {
                 paddingLeft: props.padding.left,
                 paddingRight: props.padding.right,
                 borderRadius: 24,
+                flex: 1,
             }}
         >
             <CardUI.Content>
-                {props.children}
+                { props.children }
             </CardUI.Content>
         </CardUI>
     );

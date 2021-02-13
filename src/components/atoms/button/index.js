@@ -12,16 +12,32 @@ const propTypes = {
      * Callback for button onPress
      */
     onPress: PropTypes.func,
+    /**
+     * Boolean to disable button (default false)
+     */
+    disable: PropTypes.bool,
+    /**
+     * Style of button
+     */
+    style: PropTypes.object,
 };
 
 const defaultProps = {
     text: 'Teste botão',
     onPress: () => { },
+    disable: false,
+    style: {}
 };
 
 const Button = (props) => {
     return (
-        <ButtonUI mode="contained" onPress={props.onPress} uppercase={false} compact>
+        <ButtonUI
+            mode="contained"
+            onPress={props.onPress}
+            uppercase={false}
+            compact
+            disabled={props.disable}
+            style={props.style}>
             <Text text={props.text} color='white' />
         </ButtonUI>
     );

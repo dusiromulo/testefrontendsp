@@ -1,4 +1,5 @@
 import React from 'react';
+import { PixelRatio } from 'react-native';
 import { Text as TextUI } from 'react-native-paper';
 import PropTypes from 'prop-types';
 
@@ -23,6 +24,10 @@ const propTypes = {
      * Fill all width avaiable
      */
     fullWidth: PropTypes.bool,
+    /**
+     * Center text align
+     */
+    centerText: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -31,6 +36,7 @@ const defaultProps = {
     weight: 'normal',
     size: 14,
     fullWidth: false,
+    centerText: false,
 };
 
 const Text = (props) => {
@@ -42,6 +48,7 @@ const Text = (props) => {
                 fontSize: props.size,
                 fontWeight: props.weight,
                 fontFamily: 'Helvetica Neue',
+                textAlign: props.centerText? 'center': 'left',
             }
         }>
             {props.text}

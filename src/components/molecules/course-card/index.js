@@ -1,10 +1,14 @@
 import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
+
 import Text from '../../atoms/text';
 import FlexLayout from '../../atoms/flex-layout';
 import Space from '../../atoms/space';
 import Button from '../../atoms/button';
+
+import { formatPrice } from '../../../utils';
+
 
 const propTypes = {
     /**
@@ -33,9 +37,6 @@ const defaultProps = {
 };
 
 const CourseCard = (props) => {
-    const formatPrice = () => {
-        return props.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}).replace(/[^0-9,.]/g, '');
-    };
     return (
         <FlexLayout>
             <Text text={props.name} size={24} />
@@ -57,7 +58,7 @@ const CourseCard = (props) => {
                             <Text text='Investimento:' weight='300' size={10} />
                             <FlexLayout direction='row'>
                                 <Text text='R$ ' size={20} color='#7BBDF5' weight='bold' />
-                                <Text text={formatPrice()} size={30} color='#7BBDF5' weight='bold' />
+                                <Text text={formatPrice(props.price)} size={30} color='#7BBDF5' weight='bold' />
                             </FlexLayout>
                         </FlexLayout>
                     </FlexLayout>
