@@ -1,5 +1,4 @@
 import React from 'react';
-import { PixelRatio } from 'react-native';
 import { Text as TextUI } from 'react-native-paper';
 import PropTypes from 'prop-types';
 
@@ -48,6 +47,7 @@ const Text = (props) => {
                 fontSize: props.size,
                 fontWeight: props.weight,
                 fontFamily: 'Helvetica Neue',
+                letterSpacing: 0,
                 textAlign: props.centerText? 'center': 'left',
             }
         }>

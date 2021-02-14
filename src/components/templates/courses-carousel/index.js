@@ -23,7 +23,7 @@ const CoursesCarousel = (props) => {
     const _renderItem = ({item, index}) => {
         return (
             <Card margin={{top: 24, bottom: 24, left: 12, right: 12}}>
-                <CourseCard name={item.title} description={item.text} duration='30 hs' price={15.9} />
+                <CourseCard course={item} />
             </Card>
         )
     };

@@ -76,7 +76,9 @@ const CreditCardPayment = (props) => {
             }}>
                 <Button
                     text="Pagar"
-                    onPress={ props.onPress }
+                    onPress={() => {
+                        navigation.navigate('CoursesPaymentSuccess')
+                    }}
                     style={{ width: '100%'}}
                     disable={!cartaoValido} />
             </View>
