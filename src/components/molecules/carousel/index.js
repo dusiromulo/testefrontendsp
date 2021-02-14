@@ -32,6 +32,7 @@ const CarouselPagination = (props) => {
                 data={props.data}
                 sliderWidth={windowWidth}
                 itemWidth={windowWidth * 0.7}
+                inactiveSlideOpacity={1}
                 renderItem={props.renderItem} 
                 onSnapToItem={setActiveIndex} />
             <Pagination 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { PixelRatio } from 'react-native';
 import { Text as TextUI } from 'react-native-paper';
 import PropTypes from 'prop-types';
 

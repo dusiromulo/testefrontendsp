@@ -60,9 +60,11 @@ const FlexLayout = (props) => {
             paddingLeft: props.padding.left,
             paddingRight: props.padding.right,
             width: props.fullWidth? '100%': 'auto',
-            flexDirection: props.direction, 
+            flexDirection: props.direction,
             alignItems: props.alignItems,
             justifyContent: props.justifyContent,
+            backgroundColor: 'white',
+            flex: 1,
         }}>
             { props.children }
         </View>
