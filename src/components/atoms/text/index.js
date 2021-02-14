@@ -47,6 +47,7 @@ const Text = (props) => {
                 fontSize: props.size,
                 fontWeight: props.weight,
                 fontFamily: 'Helvetica Neue',
+                letterSpacing: 0,
                 textAlign: props.centerText? 'center': 'left',
             }
         }>

@@ -51,7 +51,7 @@ const TextInputM = (props) => {
             selectionColor='#B0D3FA'
             error={props.error}
             theme={{...props.theme, colors: {primary: '#707070'}}}
-            style={{ width: '100%' }}
+            style={{ width: '100%', backgroundColor: 'white' }}
             render={props =>
                 <TextInputMask
                     {...props}

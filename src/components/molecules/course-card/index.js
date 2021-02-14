@@ -38,7 +38,7 @@ const defaultProps = {
 
 const CourseCard = (props) => {
     return (
-        <FlexLayout>
+        <FlexLayout padding={{top: 8, left: 8, right: 8}}>
             <Text text={props.name} size={24} />
             <Space vertical={24}/>
             <Text text={props.description} size={14} />

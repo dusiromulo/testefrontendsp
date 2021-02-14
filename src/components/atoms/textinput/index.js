@@ -47,7 +47,7 @@ const TextInput = (props) => {
             error={props.error}
             selectionColor='#B0D3FA'
             theme={{ ...props.theme, colors: { primary: '#707070' } }}
-            style={{ width: '100%', fontSize: props.size }}
+            style={{ width: '100%', fontSize: props.size, backgroundColor: 'white' }}
         />
     );
 }
