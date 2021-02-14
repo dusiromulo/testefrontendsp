@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 
 const Routes = () => {
     return (
-        <Stack.Navigator initialRouteName="CoursePayment" headerMode='none'>
+        <Stack.Navigator initialRouteName="CoursesSelectList" headerMode='none'>
             <Stack.Screen name="CoursesSelectList" component={CoursesSelectList} />
             <Stack.Screen name="CoursePayment" component={CoursePayment} />
             <Stack.Screen name="CoursesPaymentSuccess" component={CoursePaymentSuccess} />
