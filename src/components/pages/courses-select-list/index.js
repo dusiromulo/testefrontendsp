@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { View } from 'react-native';
-import FlexLayout from '../../atoms/flex-layout';
 
 // Components imports
 import Toolbar from '../../organisms/toolbar';
