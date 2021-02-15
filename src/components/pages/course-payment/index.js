@@ -6,7 +6,7 @@ import Toolbar from '../../organisms/toolbar';
 import CreditCardPayment from '../../templates/credit-card-payment';;
 
 const CoursePayment = ({ route }) => {
-    const { course } = route.params;
+    const { course, navigation } = route.params;
     return (
         <View style={{backgroundColor: 'white', flex: 1}}>
             <Toolbar enableBack text='Pagamento com cartão'/>

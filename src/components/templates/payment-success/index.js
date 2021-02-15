@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import PropTypes from 'prop-types';
 
@@ -13,10 +14,6 @@ const propTypes = {
      */
     text: PropTypes.string,
     /**
-     * Callback for button onPress
-     */
-    onPress: PropTypes.func,
-    /**
      * Boolean to disable button (default false)
      */
     disable: PropTypes.bool,
@@ -27,6 +24,7 @@ const defaultProps = {
 };
 
 const PaymentSuccess = (props) => {
+    const navigation = useNavigation();
     return (
         <View style={{
             flex: 1,
@@ -58,7 +56,7 @@ const PaymentSuccess = (props) => {
             }}>
                 <Button
                     text="Ok"
-                    onPress={ props.onPress }
+                    onPress={() => navigation.popToTop() }
                     style={{ width: '100%'}} />
             </View>
         </View> 

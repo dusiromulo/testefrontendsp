@@ -21,9 +21,13 @@ const propTypes = {
      */
     value: PropTypes.string,
     /**
-     * Callback for button onPress
+     * Callback invoked when value of field changes
      */
     onChange: PropTypes.func,
+    /**
+     * Callback invoked when onBlur occurrs
+     */
+    onBlur: PropTypes.func,
     /**
      * Error on value
      */
@@ -36,6 +40,7 @@ const defaultProps = {
     mask: '',
     value: '',
     onChange: (val) => { },
+    onBlur: (val) => { },
     error: false,
 };
 
@@ -57,6 +62,7 @@ const TextInputM = (props) => {
                     {...props}
                     style={ { width: '100%', maxWidth: '100%', color: '#707070', fontSize: size, paddingHorizontal: 14 } }
                     mask={ mask }
+                    onBlur={ props.onBlur }
                     value={ props.value }
                     onChangeText={(formatted, extracted) => {
                         setVal(extracted);
