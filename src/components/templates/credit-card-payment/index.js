@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 
 import CreditCard from '../../molecules/credit-card';
@@ -26,6 +27,7 @@ const defaultProps = {
 };
 
 const CreditCardPayment = (props) => {
+    const navigation = useNavigation();
     const [cartaoValido, setCartaoValido] = useState(false);
     const [dadosCartao, setDadosCartao] = useState({
         numero: '',
@@ -46,10 +48,9 @@ const CreditCardPayment = (props) => {
                 </View>
             </FlexLayout>
             <Space vertical={16} />
-            <CreditCardForm onChange={(dados, valido) => {
-                setDadosCartao(dados);
-                setCartaoValido(valido);
-            }} />
+            <CreditCardForm             
+                onModelChange={(dados) => setDadosCartao(dados)}
+                onValidChange={(valido) => setCartaoValido(valido)} />
             <Space vertical={24} />
             <Divider />
             <Space vertical={16}/>
@@ -76,9 +77,7 @@ const CreditCardPayment = (props) => {
             }}>
                 <Button
                     text="Pagar"
-                    onPress={() => {
-                        navigation.navigate('CoursesPaymentSuccess')
-                    }}
+                    onPress={() => navigation.navigate('CoursesPaymentSuccess')}
                     style={{ width: '100%'}}
                     disable={!cartaoValido} />
             </View>
