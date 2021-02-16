@@ -1,0 +1,16 @@
+{
+    "preset": "react-native",
+    "globals": {
+        "__DEV__": true
+    },
+    "transformIgnorePatterns": [
+        "./node_modules/(?!native-base)/"
+    ],
+    "transform": {
+        "^.+\\.js$": "babel-jest"
+    },
+    "setupFiles": [
+        "./setupJest.js",
+        "./node_modules/react-native-gesture-handler/jestSetup.js"
+    ]
+}
